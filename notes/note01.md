@@ -10,20 +10,18 @@
 
 ### 2. 扩展包
 （1）VSCode
-  - 点击VSCode的扩展；
-  - 搜索“C/C++”和“CodeLLDB”，并点击下载。<br>
+  - 点击 VSCode 的扩展；
+  - 搜索 `C/C++` 和 `CodeLLDB`，并点击下载。<br>
   ![C/C++和CodeLLDB](../img/img01.png)
   
-（2）CodeLLDB可能由于网络问题安装失败。可选择其他下载方式：
+（2）`CodeLLDB` 可能由于网络问题安装失败。可选择其他下载方式：
   - GitHub：[vscode-lldb](https://github.com/vadimcn/vscode-lldb/releases)
-    > 基于Intel的Mac选择：codelldb-x86_64-darwin.vsix <br> 基于Apple Silicon的Mac选择：codelldb-aarch64-darwin.vsix
+    > 基于 Intel 的 Mac 选择：codelldb-x86_64-darwin.vsix <br> 基于 Apple Silicon 的 Mac 选择：codelldb-aarch64-darwin.vsix
   
     下载完成后，在扩展中点击“从VISX安装”，选择对应的 `.vsix` 文件，即可。<br>
   ![从VISX安装...](../img/img14.png)
   - 百度云网盘分享：
     > 链接: https://pan.baidu.com/s/161ZDiXmCjPCetZoaOpYIRA <br> 提取码: 781s
-
----
 
 ## 二、步骤相关
 1. 打开自己的项目，并新建一个 `main.c` 文件，简单代码如下图所示：<br>
@@ -44,7 +42,7 @@
 5. 再按下`fn` + `F5`，终端成功输出 `hello world!`，如下图所示：<br>
 ![运行成功](../img/img09.png)
 
-6. Debug之前都要先运行生成任务，如果不想每次都手动执行，可以执行：终端——配置默认生成任务，如下图所示：<br>
+6. Debug 之前都要先运行生成任务，如果不想每次都手动执行，可以执行：终端——配置默认生成任务，如下图所示：<br>
 ![配置默认生成任务](../img/img10.png)
 ![C/C++：gcc生成活动文件](../img/img11.png)
 
