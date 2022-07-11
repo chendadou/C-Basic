@@ -28,12 +28,12 @@
     - 先定义，后使用；
     - 大写字母和小写字母是不同的字符。
 ### 3. 关键字
-  |||||||||
-  :---:   | :---:   | :---:    | :---:  | :---:     | :---:    | :---:    | :---:
-  auto    | break   | case     | char   | const     | continue | default  |  do
-  double  | else    | enum     | extern | float     | for      | goto     | if
-  int     | long    | register | return | short     | signed   | sizeof   | static
-  struct  | switch  | typedef  | union  | unsigned  | void     | volatile | while
+  -|-|-|-|-|-|-|-
+  :---:  | :---: | :---:   | :---:  | :---:    | :---:    | :---:    | :---:
+  auto   | break | case    | char   | const    | continue | default  | do
+  double | else  | enum    | extern | float    | for      | goto     | if
+  int    | long  | register| return | short    | signed   | sizeof   | static
+  struct | switch| typedef | union  | unsigned | void     | volatile | while
 
 ## 三、scanf 和 printf
 ### 1. scanf
