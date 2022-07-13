@@ -1,3 +1,6 @@
+// 解决 scanf 编译报错问题（如有需要）
+// #define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 
 int main()
@@ -20,5 +23,26 @@ int main()
   float k = (float)i/2;
   printf("j = %f\n", j);    // j = 2.000000
   printf("k = %f\n", k);    // k = 2.500000
+
+  // 4. scanf 和 printf
+  int o;
+  char p;
+  float q;
+
+  scanf("%d", &o);
+  printf("o = %d\n", o);    // 假设输入8，回车 -> '8\n'，读取了8，忽略了'\n'
+  scanf("%c", &p);
+  printf("p = %c\n", p);    // 读取了缓冲区中残留的 '\n'，而不是输入的单个字符
+  scanf("%f", &q);
+  printf("q = %f\n", q);
+
+  // 5. 判断是否为闰年
+  int year;
+  printf("请输入年份：");
+  scanf("%d", &year);
+  if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
+    printf("%d 年是闰年。\n", year);
+  else
+    printf("%d 年不是闰年。\n", year);
 
 }
