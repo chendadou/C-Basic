@@ -1,3 +1,5 @@
+[🔙 返回](../README.md)
+
 # 数据类型、scanf 和 printf
 
 ## 一、 数据类型的分类
