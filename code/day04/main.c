@@ -38,13 +38,13 @@ void testD()
   char p;
   float q;
 
-  printf("请输入整数o：\n");
+  printf("请输入整数o：");
   scanf("%d", &o);
   printf("o = %d\n", o);    // 假设输入8，回车 -> '8\n'，读取了8，忽略了'\n'
-  printf("请输入单个字符p：\n");
+  printf("请输入单个字符p：");
   scanf("%c", &p);
   printf("p = %c\n", p);    // 读取了缓冲区中残留的 '\n'，而不是输入的单个字符
-  printf("请输入小数q：\n");
+  printf("请输入小数q：");
   scanf("%f", &q);
   printf("q = %f\n", q);
 }
@@ -61,11 +61,11 @@ void testE()
     printf("%d 年不是闰年。\n", year);
 }
 
-// 6. scanf 循环读取
+// 6. scanf 循环读取整数
 void scanfA()
 {
   int count;
-  printf("请输入整数count：\n");
+  printf("请输入整数count：");
   while(scanf("%d", &count) != EOF){
     printf("count = %d\n", count);
 
@@ -77,7 +77,7 @@ void scanfA()
 void scanfB()
 {
   char str;
-  printf("请输入字符串str：\n");
+  printf("请输入字符str：");
   while(scanf("%c", &str) != EOF){
     if(str != '\n'){
       printf("%c", str - 32);
@@ -89,6 +89,26 @@ void scanfB()
   }
 }
 
+// 8. 一个 scanf 读多种数据类型
+void scanfC()
+{
+  int i;
+  char m;
+  float n;
+
+  // 混合输入时，每次在%c前需加一个空格
+  scanf("%d %c%f", &i, &m, &n);
+  printf("i = %d, m = %c, n = %f\n", i, m, n);
+}
+
+// 9. printf 控制输出格式
+void printfTest()
+{
+  printf("name = %s, age = %d, score = %f, sex = %c\n", "test", 3, 95.5, 'f');
+  printf("name = %s, age = %4d, score = %4.1f, sex = %c\n", "test", 3, 95.5, 'f');
+  printf("name = %10s, age = %-4d, score = %5.2f, sex = %c\n", "test", 3, 95.5, 'f');
+}
+
 int main()
 {
   printf("1: 字符型大小写转换\n");
@@ -98,6 +118,8 @@ int main()
   printf("5: 判断是否为闰年\n");
   printf("6: scanf 循环读取整数\n");
   printf("7: scanf 循环读取字符：小写字母转大写字母\n");
+  printf("8: 一个 scanf 读多种数据类型\n");
+  printf("9: printf 控制输出格式\n");
   printf("请输入对应序号，运行对应例子：");
 
   int num;
@@ -124,6 +146,12 @@ int main()
       break;
     case 7:
       scanfB();
+      break;
+    case 8:
+      scanfC();
+      break;
+    case 9:
+      printfTest();
       break;
     default:
       printf("输入的序号不存在。\n");
