@@ -20,7 +20,7 @@ void test_b()
   int i = 1;
   int total = 0;
   while(i <= 100){
-    total += i;
+    total = total + i;
     i++;
   }
   printf("while 循环：total = %d\n", total);
@@ -36,6 +36,49 @@ void test_c()
   printf("for 循环：total = %d\n", total);
 }
 
+// 4. 从 1 到 100 之间的奇数之和（continue 和 for）
+void test_d()
+{
+  int i, total;
+  for(i = 1, total = 0; i <= 100; i++){
+    if(i % 2 == 0){     // 跳过偶数，执行下一次循环，即 i++。
+      continue;
+    }
+    total += i;
+  }
+  printf("total = %d\n", total);
+}
+
+// 5. 从 1 到 100 之间的奇数之和（continue 和 while）
+void test_e()
+{
+  int i = 1;
+  int total = 0;
+  while(i <= 100){
+    if(i % 2 == 0){
+      i++;
+      continue;
+    } else{
+      total += i;
+      i++;
+    }
+  }
+  printf("total = %d\n", total);
+}
+
+// 6. 从 1 加到 100，当 total 大于 1000 时结束循环
+void test_f()
+{
+  int i, total;
+  for(i = 1, total = 0; i <= 100; i++){
+    if(total > 1000){
+      break;
+    }
+    total += i;
+  }
+  printf("total = %d, i = %d\n", total, i);
+}
+
 int main()
 {
   int num;
@@ -49,6 +92,15 @@ int main()
       break;
     case 3:
       test_c();
+      break;
+    case 4:
+      test_d();
+      break;
+    case 5:
+      test_e();
+      break;
+    case 6:
+      test_f();
       break;
     default:
       printf("...");
