@@ -57,6 +57,16 @@ void test_e(char str[])   // str 为形参
   printf("\n");
 }
 
+// 6. gets 和 puts
+void test_f()
+{
+  char c[20];
+
+  // warning: this program uses gets(), which is unsafe.
+  gets(c);
+  puts(c);
+}
+
 int main()
 {
   printf("1. 打印数组里的每一个元素；\n");
@@ -64,6 +74,7 @@ int main()
   printf("3. 关于字符串的结束标志'\\0'；\n");
   printf("4. scanf读取字符串，忽略空格和回车；\n");
   printf("5. 字符数组的传递；\n");
+  printf("6. gets 和 puts；\n");
   printf("请输入序号，运行相应例子：");
 
   int num;
@@ -90,6 +101,9 @@ int main()
       break;
     case 5:
       test_e(c);    // c 为实参
+      break;
+    case 6:
+      test_f();
       break;
     default:
       printf("输入不合法。\n");
