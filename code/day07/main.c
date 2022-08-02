@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #define N 5
 
 // 1. 打印数组里的每一个元素
@@ -60,11 +61,40 @@ void test_e(char str[])   // str 为形参
 // 6. gets 和 puts
 void test_f()
 {
+  // 字符数组的数组名里存储的就是字符数组的起始地址，类型是字符指针
   char c[20];
 
   // warning: this program uses gets(), which is unsafe.
-  gets(c);
-  puts(c);
+  gets(c);  // 当一次读取一行时，使用 gets。但这玩意儿不安全，有推荐说使用 fgets，后续再补充吧。
+  puts(c);  // 等价于 printf("%s\n", c);
+}
+
+// 7. str 系列字符串操作函数
+void test_g()
+{
+  // strlen
+  char a[10] = "hello";
+  int len = strlen(a);
+  printf("字符串 hello 的长度为：%d。\n", len);
+
+  // strcpy
+  char b[10] = "wow";
+  char c[10];
+  strcpy(c, b);
+  printf("c = %s\n", c);
+
+  // strcmp
+  int l_cmp = strcmp("wow", "yeah");
+  int e_cmp = strcmp("wow", "wow");
+  int g_cmp = strcmp("yeah", "wow");
+  printf("wow 和 yeah 的比较结果：%d\n", l_cmp);
+  printf("wow 和 wow 的比较结果：%d\n", e_cmp);
+  printf("yeah 和 wow 的比较结果：%d\n ", g_cmp);
+
+  // strcat
+  char d[20] = "what ";
+  char e[10] = "happened";
+  puts(strcat(d, e));
 }
 
 int main()
@@ -75,6 +105,7 @@ int main()
   printf("4. scanf读取字符串，忽略空格和回车；\n");
   printf("5. 字符数组的传递；\n");
   printf("6. gets 和 puts；\n");
+  printf("7. str 系列字符串操作函数；\n");
   printf("请输入序号，运行相应例子：");
 
   int num;
@@ -104,6 +135,9 @@ int main()
       break;
     case 6:
       test_f();
+      break;
+    case 7:
+      test_g();
       break;
     default:
       printf("输入不合法。\n");

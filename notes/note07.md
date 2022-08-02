@@ -139,3 +139,30 @@ char c[10];
       ```
   - `puts` 执行成功时返回非负值，执行失败时返回 `EOF`。
 ### 2.5 str 系列字符串操作函数
+  - ``` C
+    #include <string.h>
+
+    // strlen: 用于统计字符串长度
+    size_t strlen(char *str);
+
+    // strcpy: 用于将某个字符串复制到指定字符数组中   
+    char *strcpy(char *to, const char *from);
+
+    /*
+      strcmp: 用于比较两个字符串的大小（比较的是对应字符的 ASCII 码值）
+      (1) 返回值小于0: str1 小于 str2
+      (2) 返回值等于0: str1 等于 str2
+      (3) 返回值大于0: str1 大于 str2
+    */
+    int strcmp(const char *str1, const char *str2);
+
+    /*  
+      strcat: 用于将两个字符串连接到一起
+      其中，str1 的长度要能容纳拼接后的字符串长度。
+    */
+    char *strcat(char *str1, const char *str2);
+    ```
+  - `size_t` 其实是：
+    - ``` C
+      typedef unsigned int size_t;
+      ```
