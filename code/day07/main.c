@@ -97,6 +97,59 @@ void test_g()
   puts(strcat(d, e));
 }
 
+// 8. 利用 while 循环或者 for 循环计算 n! 
+void test_h()
+{
+  int n;
+  printf("请输入整数n：");
+  scanf("%d", &n);
+
+  int result = 1;
+
+  // while 循环
+  while(n > 0){
+    result *= n;
+    n--;
+  }
+  printf("result = %d\n", result);
+
+  // for 循环
+  // for(int i = 1; i <= n; i ++){
+  //   result *= i;
+  // }
+}
+
+/*
+  9. 将一张面值 100 元的人民币兑换成 10 元、5 元、2 元和 1 元。
+    要求：换正好 40 张，且每种票子至少一张。
+    提问：有几种换法？
+*/
+void test_i()
+{
+  // a, b, c, d 分别代表 10 元、5 元、2 元和 1 元
+  int a, b, c, d;
+  int total = 0;
+
+  for(a = 1; a <= 9; a++)
+  {
+    for(b = 1; b <= 17; b++)
+    {
+      for(c = 1; c <= 37; c++)
+      {
+        for(d = 1; d <= 37; d++)
+        {
+          if(a + b + c + d == 40 && a * 10 + b * 5 + c * 2 + d == 100)
+          {
+            total++;
+            printf("%d. %d 张 10 元, %d 张 5 元, %d 张 2 元, %d 张 1 元\n", total, a, b, c, d);
+          }
+        }
+      }
+    }
+  }
+  printf("共有 %d 种换法。\n", total);
+}
+
 int main()
 {
   printf("1. 打印数组里的每一个元素；\n");
@@ -106,6 +159,7 @@ int main()
   printf("5. 字符数组的传递；\n");
   printf("6. gets 和 puts；\n");
   printf("7. str 系列字符串操作函数；\n");
+  printf("8. 利用 while 循环或者 for 循环计算 n!\n");
   printf("请输入序号，运行相应例子：");
 
   int num;
@@ -139,10 +193,15 @@ int main()
     case 7:
       test_g();
       break;
+    case 8:
+      test_h();
+      break;
+    case 9:
+      test_i();
+      break;
     default:
       printf("输入不合法。\n");
       break;
   }
   return 0;
 }
-
