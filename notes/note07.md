@@ -69,7 +69,6 @@
     int a[5] = {1, 3, 5, 7, 8};
     a[5] = 10;  // 访问越界，报错
     ```
-  - C语言中的函数调用方式是值传递！
 
 ## 2. 字符数组
 ### 2.1 定义
@@ -138,6 +137,12 @@ char c[10];
       int puts(char *str);
       ```
   - `puts` 执行成功时返回非负值，执行失败时返回 `EOF`。
+#### 2.4.3 `fgets` 函数
+  - `fgets` 函数格式如下：
+    - ``` C
+      char *fgets(char *str, int n, FILE *stream);
+      ```
+  - `fgets` 相对于 `gets` 函数去读取标准输入时，会把 `\n` 放入字符数组中。
 ### 2.5 str 系列字符串操作函数
   - ``` C
     #include <string.h>

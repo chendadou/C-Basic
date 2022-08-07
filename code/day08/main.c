@@ -79,11 +79,49 @@ void test_c()
 
 }
 
+void change(int *j){  // j = &i;
+  *j = 3;   // 间接访问变量 i（指针的间接访问）
+}
+
+// 4. 指针的传递
+void test_d()
+{
+  int i = 9;    // i 是局部变量
+  printf("before change: i = %d\n", i);
+  change(&i);   // 传递变量 i 的地址
+  printf("after change: i = %d\n", i);
+}
+
+// 5. 指针的偏移
+void test_e()
+{
+  int a[5] = {1, 2, 3, 4, 5};
+  int *p;
+  p = a;      // p 指向 a 的第一个元素
+  int i;
+
+  printf("正序输出：");
+  for(i = 0; i < 5; i++)
+    printf("%d ", *(p + i));
+    // 指针 p + 1，内存中实际上是加了一个基类型的数据类型大小，比如这边是 int，那么就是加了 4 个字节
+
+  printf("\n----------------------\n");
+
+  p = &a[4];  // p 指向 a 的最后一个元素
+  printf("倒序输出：");
+  for(i = 0; i < 5; i++)
+    printf("%d ", *(p - i));
+  
+  printf("\n");
+}
+
 int main()
 {
   printf("1. 指针变量，直接访问和间接访问\n");
   printf("2. 输入n个数，输出数字2的出现次数（n < 100）\n");
   printf("3. 读取一个字符串，将字符串逆转（字符串中可能含有空格）\n");
+  printf("4. 指针的传递\n");
+  printf("5. 指针的偏移\n");
   printf("请输入序号，运行相应例子：");
 
   int num;
@@ -99,6 +137,12 @@ int main()
       break;
     case 3:
       test_c();
+      break;
+    case 4:
+      test_d();
+      break;
+    case 5:
+      test_e();
       break;
     default:
       printf("输入不合法。\n");
