@@ -224,6 +224,25 @@ void test_j()
   puts(str);
 }
 
+// 11. 二级指针
+void change_k(int **p, int *pj)
+{
+  *p = pj;
+}
+void test_k()
+{
+  int i = 5;
+  int j = 10;
+  int *pi, *pj;
+  pi = &i;
+  pj = &j;
+  printf("i = %d, *pi = %d, *pj = %d\n", i, *pi, *pj);  // i = 5, *pi = 5, *pj = 10
+  
+  // 目的是把 *pi 的值改为 10
+  change_k(&pi, pj);
+  printf("i = %d, *pi = %d, *pj = %d\n", i, *pi, *pj);  // i = 5, *pi = 10, *pj = 5
+}
+
 int main()
 {
   printf("1. 指针变量，直接访问和间接访问\n");
@@ -235,6 +254,8 @@ int main()
   printf("7. 指针与一维数组（把\"hello\"翻转）\n");
   printf("8. 指针与动态内存空间申请\n");
   printf("9. 栈空间与堆空间的差异\n");
+  printf("10. 输入一个整型数和字符串，输出一个字符串\n");
+  printf("11. 二级指针\n");
   printf("请输入序号，运行相应例子：");
 
   int num;
@@ -271,6 +292,9 @@ int main()
     break;
   case 10:
     test_j();
+    break;
+  case 11:
+    test_k();
     break;
   default:
     printf("输入不合法。\n");
