@@ -54,10 +54,16 @@ void test_b()
     若原来字符串小于逆转后字符串，则输出 -1
     若原来字符串大于逆转后字符串，则输出 1
 
-  TODO: 这边 gets 和 fgets 还无法生效，应该是 launch.json 的配置问题，后续需解决。
+  之前 get 无法生效的原因是：
+    由于我在 main 函数里多加了一层选择序号的读取标准输入（会产生一个\n），所以需要先去除缓冲区里的\n
+    还是有警告 warning: this program uses gets(), which is unsafe. 但不影响正常输入
 */
 void test_c()
 {
+  // 去除缓冲区里的\n
+  char a;
+  scanf("%c", &a);
+
   char c[100], d[100];
   gets(c);
   int i, j;
@@ -170,7 +176,7 @@ void test_h()
   int i;                  // i 表示申请的空间有多大
   scanf("%d", &i);
   char *p;
-  p = (char*)malloc(i);   // malloc 申请空间的单位是字节
+  p = (char *)malloc(i);   // malloc 申请空间的单位是字节
   strcpy(p, "malloc succeed");
   puts(p);
   p++;
@@ -200,6 +206,22 @@ void test_i()
 
   p = print_malloc();   // 堆空间不会随着函数执行的结束而释放，必须自己 free
   puts(p);
+}
+
+// 10. 输入一个整型数和字符串，输出一个字符串
+void test_j()
+{
+  int i;
+  scanf("%d", &i);  // 读取一个整型数
+  char *str;
+  str = (char *)malloc(i);
+  
+  // 为了去除缓冲区里的 \n
+  char c;
+  scanf("%c", &c);
+  
+  gets(str);        // 会出现 warning: this program uses gets(), which is unsafe. 但不影响正常输入
+  puts(str);
 }
 
 int main()
@@ -246,6 +268,9 @@ int main()
     break;
   case 9:
     test_i();
+    break;
+  case 10:
+    test_j();
     break;
   default:
     printf("输入不合法。\n");
