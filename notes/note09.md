@@ -75,7 +75,9 @@
           ```
     - 函数调用：main.c 文件
       ``` C
+      // 主程序中不仅要包含头文件，还要包含函数文件
       #include "func.h"
+      #include "func.c"
 
       int main(int i)
       {

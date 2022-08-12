@@ -8,3 +8,4 @@
 6. [选择结构与循环结构](./notes/note06.md)
 7. [一维数组和字符数组](./notes/note07.md)
 8. [指针](./notes/note08.md)
+9. [函数](./notes/note09.md)
