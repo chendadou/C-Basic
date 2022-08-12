@@ -32,6 +32,8 @@
 
       // demo 函数声明
       int demo(int i);
+
+      // test 函数声明
       void test();
       ```
   - 函数的分类与调用
@@ -78,7 +80,7 @@
       int main(int i)
       {
         int a = 2;
-        a = demo(2);    // demo 函数调用，a 为实参
+        a = demo(a);    // demo 函数调用，a 为实参
         printf("a = %d\n", a);
         return 0;
       }

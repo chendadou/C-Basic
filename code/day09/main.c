@@ -1,4 +1,6 @@
+// 主程序中不仅要包含头文件，还要包含函数文件
 #include "func.h"
+#include "func.c"
 
 // 全局变量 i
 int i = 10;
@@ -19,5 +21,3 @@ int main()
 
   return 0;
 }
-
-// TODO: 关于编译头文件，.vscode文件夹内的配置需要修改，否则编译出错。
